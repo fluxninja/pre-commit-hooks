@@ -1,0 +1,8 @@
+-   id: circleci-validate
+    name: check .circle ci file
+    description: Validate all the .yaml files in .circleci dir
+    entry: circleci-validate
+    language: python
+    files: ^.circleci/
+    types: [python]
+
