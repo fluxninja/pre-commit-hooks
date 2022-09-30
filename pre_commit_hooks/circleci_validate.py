@@ -19,7 +19,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     retval = 0
     for filename in args.filenames:
         try:
-            util.cmd_output('circleci', 'config','validate',*args.filenames,retcode=None,okcode=255)
+            util.cmd_output('circleci', 'config','validate',filename,retcode=None,okcode=255)
         except Exception as e:
             print(f'{filename}: Failed to validate ({e})')
             retval = 1
