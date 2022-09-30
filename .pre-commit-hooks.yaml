@@ -4,5 +4,5 @@
     entry: circleci-validate
     language: python
     files: ^.circleci/
-    types: [python]
+    types: [file,yaml,yml]
 
