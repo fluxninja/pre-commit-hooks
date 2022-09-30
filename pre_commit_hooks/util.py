@@ -16,6 +16,7 @@ def cmd_output(*cmd: str, retcode: int | None = 0, **kwargs: Any) -> str:
     proc = subprocess.Popen(cmd, **kwargs)
     stdout, stderr = proc.communicate()
     stdout = stdout.decode()
+    stderr = stderr.decode()
     #Generating hash of the know error
     hash_val = hashlib.md5(stderr.encode())
     if hash_val.hexdigest() == '46cb3d2ca973ded51e63cd2a8966a41d':
