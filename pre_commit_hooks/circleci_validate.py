@@ -5,7 +5,6 @@ from typing import Sequence
 from pre_commit_hooks import util
 import argparse
 
-
 def installation():
     util.cmd_output('sudo','apt','install','snapd')
     util.cmd_output('sudo','snap','install' ,'circleci')
@@ -19,10 +18,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     retval = 0
     for filename in args.filenames:
         try:
-            global stderr
-            _, stderr = util.cmd_output('circleci', 'config','validate',*args.filenames)
-        except Exception:
-            print(f'{filename}: Failed to validate ({stderr})')
+            util.cmd_output('circleci', 'config','validate',*args.filenames)
+        except util.CalledProcessError as e:
+            print(f'{filename}: Failed to validate ({e})')
             retval = 1
     return retval
 
