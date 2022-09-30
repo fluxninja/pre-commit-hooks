@@ -20,8 +20,8 @@ def cmd_output(*cmd: str, retcode: int | None = 0, **kwargs: Any) -> str:
     #Generating hash of the know error
     hash_val = hashlib.md5(stderr.encode())
     if hash_val.hexdigest() == '46cb3d2ca973ded51e63cd2a8966a41d':
-        return stdout, stderr
+        return stdout
 
     if retcode is not None and proc.returncode != retcode:
         raise CalledProcessError(cmd, retcode, proc.returncode, stdout, stderr)
-    return stdout, stderr
+    return stdout
