@@ -1,6 +1,6 @@
 -   id: circleci-validate
-    name: check .circleci file
-    description: Validate all the .yaml files in .circleci dir
+    name: CircleCI config validation
+    description: Test if the CircleCI config is well formed.
     entry: circleci-validate
     language: python
     files: ^.circleci/
