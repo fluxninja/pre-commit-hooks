@@ -3,5 +3,5 @@
     description: Validate all the .yaml files in .circleci dir
     entry: circleci-validate
     language: python
-    files: ^.circleci/*.*ml$
+    files: ^.circleci/
     types: [file]
