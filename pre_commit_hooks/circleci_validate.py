@@ -4,6 +4,8 @@ from __future__ import annotations
 from typing import Sequence
 from pre_commit_hooks import util
 import argparse
+import os
+
 
 def installation():
     util.cmd_output('sudo','apt','install','snapd')
@@ -26,4 +28,5 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 if __name__ == '__main__':
-    raise SystemExit(main())
+    if os.Getenv('CIRCLECI') != True:
+        raise SystemExit(main())
