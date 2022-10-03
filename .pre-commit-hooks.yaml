@@ -3,5 +3,5 @@
     description: Test if the CircleCI config is well formed.
     entry: circleci-validate
     language: python
-    files: ^.circleci/
-    types: [file]
+    files: ^.circleci/*.*ml$
+    types_or: [yaml,yml]
