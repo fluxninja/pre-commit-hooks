@@ -28,5 +28,5 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 if __name__ == '__main__':
-    if os.Getenv('CIRCLECI') != True:
+    if os.Getenv('CIRCLECI') != 'true':
         raise SystemExit(main())
