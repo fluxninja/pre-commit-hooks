@@ -35,5 +35,5 @@ if __name__ == '__main__':
 
     logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
     logging.info('Env log value',env_val)
-    if env_val != 'true':
+    if env_val != True:
         raise SystemExit(main())
