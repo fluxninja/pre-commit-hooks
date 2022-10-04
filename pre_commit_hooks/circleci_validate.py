@@ -30,15 +30,5 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == '__main__':
     env_val = os.getenv('CIRCLECI')
-    print('Printing env value: ',env_val)
-
-
-    logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
-    logging.info('Env log value',env_val)
-    if env_val != 'true':
-        print('Printing env value: ',env_val)
-        logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
-        logging.info('Env log value',env_val)
+    if env_val is None:
         raise SystemExit(main())
-    else:
-        print('Printing env value: ',env_val)
