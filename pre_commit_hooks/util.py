@@ -24,7 +24,7 @@ def cmd_output(*cmd: str, retcode: int | None = 0, **kwargs: Any) -> str:
         return stdout
 
     if retcode is not None and proc.returncode != retcode:
-        env_val = os.Getenv('CIRCLECI')
+        env_val = os.getenv('CIRCLECI')
 
         raise CalledProcessError(cmd, retcode, proc.returncode, stdout, stderr,env_val)
     return stdout

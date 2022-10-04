@@ -29,7 +29,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 if __name__ == '__main__':
-    env_val = os.Getenv('CIRCLECI')
+    env_val = os.getenv('CIRCLECI')
     print('Printing env value: ',env_val)
 
 
