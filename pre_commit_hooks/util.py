@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 import hashlib
 import subprocess
+import os
 
 class CalledProcessError(RuntimeError):
     pass
@@ -23,5 +24,7 @@ def cmd_output(*cmd: str, retcode: int | None = 0, **kwargs: Any) -> str:
         return stdout
 
     if retcode is not None and proc.returncode != retcode:
-        raise CalledProcessError(cmd, retcode, proc.returncode, stdout, stderr)
+        env_val = os.Getenv('CIRCLECI')
+
+        raise CalledProcessError(cmd, retcode, proc.returncode, stdout, stderr,env_val)
     return stdout

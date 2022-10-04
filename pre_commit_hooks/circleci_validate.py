@@ -5,6 +5,7 @@ from typing import Sequence
 from pre_commit_hooks import util
 import argparse
 import os
+import logging
 
 
 def installation():
@@ -30,5 +31,9 @@ def main(argv: Sequence[str] | None = None) -> int:
 if __name__ == '__main__':
     env_val = os.Getenv('CIRCLECI')
     print('Printing env value: ',env_val)
+
+
+    logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
+    logging.info('Env log value',env_val)
     if env_val != 'true':
         raise SystemExit(main())
