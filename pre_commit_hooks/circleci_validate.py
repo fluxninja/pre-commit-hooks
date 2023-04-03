@@ -4,8 +4,6 @@ from __future__ import annotations
 from typing import Sequence
 from pre_commit_hooks import util
 import argparse
-import os
-import logging
 
 
 def main(argv: Sequence[str] | None = None) -> int:
